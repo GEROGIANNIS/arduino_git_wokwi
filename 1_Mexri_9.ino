@@ -5,8 +5,109 @@ int pinD = 10;
 int pinE = 9;
 int pinF = 8;
 int pinG = 7;
-
-int t = 1000;
+void displayNumber(int number) {
+  switch (number) {
+    case 0:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, LOW);
+      break;
+    case 1:
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      break;
+    case 2:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, LOW);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 3:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 4:
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 5:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, LOW);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 6:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, LOW);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 7:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      break;
+    case 8:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, HIGH);
+      digitalWrite(pinE, HIGH);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      break;
+    case 9:
+      digitalWrite(pinA, HIGH);
+      digitalWrite(pinB, HIGH);
+      digitalWrite(pinC, HIGH);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, HIGH);
+      digitalWrite(pinG, HIGH);
+      break;
+    default:
+      digitalWrite(pinA, LOW);
+      digitalWrite(pinB, LOW);
+      digitalWrite(pinC, LOW);
+      digitalWrite(pinD, LOW);
+      digitalWrite(pinE, LOW);
+      digitalWrite(pinF, LOW);
+      digitalWrite(pinG, LOW);
+      break;
+  }
+}
 
 void setup() {
   pinMode(pinA, OUTPUT);
@@ -19,103 +120,8 @@ void setup() {
 }
 
 void loop() {
-  //https://i.stack.imgur.com/yerTi.png pinakas alitheias tis othonis 7 segment
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 1);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 0);
-  delay(t);
-
-  // 1
-  digitalWrite(pinA , 0);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 0);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 0);
-  digitalWrite(pinG , 0);
-  delay(t);
-
-  // 2
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 0);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 1);
-  digitalWrite(pinF , 0);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 3
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 0);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 4
-  digitalWrite(pinA , 0);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 0);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 5
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 0);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 6
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 0);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 1);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 7
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 0);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 0);
-  digitalWrite(pinG , 0);
-  delay(t);
-
-  // 8
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 1);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 1);
-  delay(t);
-
-  // 9
-  digitalWrite(pinA , 1);
-  digitalWrite(pinB , 1);
-  digitalWrite(pinC , 1);
-  digitalWrite(pinD , 1);
-  digitalWrite(pinE , 0);
-  digitalWrite(pinF , 1);
-  digitalWrite(pinG , 1);
-  delay(t);
+  for (int i = 0; i < 10; i++) {
+    displayNumber(i);
+    delay(1000);
+  }
 }
