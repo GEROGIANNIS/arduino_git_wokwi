@@ -6,6 +6,7 @@ int pinE = 9;
 int pinF = 8;
 int pinG = 7;
 void displayNumber(int number) {
+  ////https://i.stack.imgur.com/yerTi.png pinakas alitheias tis othonis 7 segment
   switch (number) {
     case 0:
       digitalWrite(pinA, HIGH);
